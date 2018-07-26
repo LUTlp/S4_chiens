@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-#20.times do
-#  city = City.create(city_name: Faker::Address.city)
-#end
-
-#30.times do |index|
-#  stroll = Stroll.create(creneau: index)
-#end
+20.times do
+ city = City.create(city_name: Faker::Address.city)
+end
 
 5.times do
   dogsitter = Dogsitter.create(name: Faker::Name.name, cities_id: 3)
 end
 
-#2.times do
-#  dog = Dog.create(dog_name: Faker::FunnyName.name , dogsitters_id: 2, cities_id: 3)
-#end
+2.times do
+  dog = Dog.create(dog_name: Faker::FunnyName.name, dogsitters_id: 2, cities_id: 3)
+end
+
+30.times do |index|
+  stroll = Stroll.create(dogsitter_id: 2, dog_id: 2, strollsappointment: Faker::Date.forward(23))
+end

@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(version: 2018_07_26_134750) do
   end
 
   create_table "strolls", force: :cascade do |t|
-    t.integer "creneau"
+    t.datetime "strollsappointment"
+    t.integer "dogsitter_id"
+    t.integer "dog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_strolls_on_dog_id"
+    t.index ["dogsitter_id"], name: "index_strolls_on_dogsitter_id"
   end
 
 end
